@@ -59,3 +59,4 @@ systemctl start mo_witness
 ## Future plans
 
 Implement url and sql checks
+Implement a pseudo dhcp client
