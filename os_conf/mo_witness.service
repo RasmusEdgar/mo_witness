@@ -1,0 +1,18 @@
+[Unit]
+Description=mo_witness mojolicious start script
+Requires=network.target
+After=network.target
+
+[Service]
+User=alerthole
+EnvironmentFile=-/etc/sysconfig/mo_witness.env
+Type=simple
+RemainAfterExit=yes
+SyslogIdentifier=mo_witness
+PIDFile=/opt/mowitness/mo_witness/mo_witness.pid
+ExecStart=/opt/mowitness/perl5/bin/hypnotoad /opt/mowitness/mo_witness/script/mo_witness -f
+ExecStop=/opt/mowitness/perl5/bin/hypnotoad -s /opt/mowitness/mo_witness/script/mo_witness
+ExecReload=/opt/mowitness/perl5/bin/hypnotoad /opt/mowitness/mo_witness/script/mo_witness
+
+[Install]
+WantedBy=multi-user.target
