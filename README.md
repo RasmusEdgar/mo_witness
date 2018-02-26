@@ -3,7 +3,9 @@ MoWitness is a simple thing which checks ports when requested to do so. Intended
 
 You can check both udp and tcp ports.
 
-It returns 1 if port is up and 0 if port is down.
+It returns 1 if port is up and 0 if port is down. For two checks where a port is up on one server and down on another would look like this: 10
+
+On Keepalived you could use this return code to determine what VRRP state Keepalived should be put in.
 
 MoWitness only accepts GET requests and checks the caller for a valid pre-agreed UserAgent ID. All non-matching request are denied with a HTTP 404 code.
 
